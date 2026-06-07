@@ -13,9 +13,6 @@
         android:orientation="vertical"
         android:padding="24dp">
 
-        <!-- ══════════════════════════════ -->
-        <!--            HEADER             -->
-        <!-- ══════════════════════════════ -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,9 +38,6 @@
 
         </LinearLayout>
 
-        <!-- ══════════════════════════════ -->
-        <!--          INPUT CARD           -->
-        <!-- ══════════════════════════════ -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,7 +46,6 @@
             android:padding="20dp"
             android:elevation="4dp">
 
-            <!-- Label: First Number -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -62,14 +55,12 @@
                 android:letterSpacing="0.1"
                 android:layout_marginBottom="6dp"/>
 
-            <!-- EditText: Number 1 -->
             <EditText
                 android:id="@+id/etNumber1"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@drawable/input_background"
                 android:hint="Enter first number"
-                android:hintTextColor="@color/text_hint"
                 android:textColor="@color/text_primary"
                 android:textSize="18sp"
                 android:inputType="numberDecimal|numberSigned"
@@ -78,12 +69,10 @@
                 android:gravity="center_vertical"
                 android:textCursorDrawable="@null"/>
 
-            <!-- Spacer -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="16dp"/>
 
-            <!-- Label: Second Number -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -93,14 +82,12 @@
                 android:letterSpacing="0.1"
                 android:layout_marginBottom="6dp"/>
 
-            <!-- EditText: Number 2 -->
             <EditText
                 android:id="@+id/etNumber2"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@drawable/input_background"
                 android:hint="Enter second number"
-                android:hintTextColor="@color/text_hint"
                 android:textColor="@color/text_primary"
                 android:textSize="18sp"
                 android:inputType="numberDecimal|numberSigned"
@@ -111,12 +98,8 @@
 
         </LinearLayout>
 
-        <!-- Spacer -->
         <View android:layout_width="match_parent" android:layout_height="20dp"/>
 
-        <!-- ══════════════════════════════ -->
-        <!--       OPERATION BUTTONS       -->
-        <!-- ══════════════════════════════ -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -126,14 +109,12 @@
             android:letterSpacing="0.1"
             android:layout_marginBottom="10dp"/>
 
-        <!-- Row 1: Add and Subtract -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <!-- Add Button -->
             <Button
                 android:id="@+id/btnAdd"
                 android:layout_width="0dp"
@@ -147,7 +128,6 @@
                 android:background="@drawable/operator_button_background"
                 android:elevation="2dp"/>
 
-            <!-- Subtract Button -->
             <Button
                 android:id="@+id/btnSubtract"
                 android:layout_width="0dp"
@@ -163,17 +143,14 @@
 
         </LinearLayout>
 
-        <!-- Spacer -->
         <View android:layout_width="match_parent" android:layout_height="12dp"/>
 
-        <!-- Row 2: Multiply and Divide -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <!-- Multiply Button -->
             <Button
                 android:id="@+id/btnMultiply"
                 android:layout_width="0dp"
@@ -187,7 +164,6 @@
                 android:background="@drawable/operator_button_background"
                 android:elevation="2dp"/>
 
-            <!-- Divide Button -->
             <Button
                 android:id="@+id/btnDivide"
                 android:layout_width="0dp"
@@ -203,12 +179,8 @@
 
         </LinearLayout>
 
-        <!-- Spacer -->
         <View android:layout_width="match_parent" android:layout_height="20dp"/>
 
-        <!-- ══════════════════════════════ -->
-        <!--          RESULT AREA          -->
-        <!-- ══════════════════════════════ -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -239,12 +211,8 @@
 
         </LinearLayout>
 
-        <!-- Spacer -->
         <View android:layout_width="match_parent" android:layout_height="20dp"/>
 
-        <!-- ══════════════════════════════ -->
-        <!--          CLEAR BUTTON         -->
-        <!-- ══════════════════════════════ -->
         <Button
             android:id="@+id/btnClear"
             android:layout_width="match_parent"
@@ -257,7 +225,6 @@
             android:background="@drawable/clear_button_background"
             android:elevation="2dp"/>
 
-        <!-- Bottom padding -->
         <View android:layout_width="match_parent" android:layout_height="24dp"/>
 
     </LinearLayout>
