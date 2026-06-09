@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Simple Calculator</string>
+    <string name="calculator_title">CALCULATOR</string>
+    <string name="first_number">First Number</string>
+    <string name="enter_first_number">Enter first number</string>
+    <string name="second_number">Second Number</string>
+    <string name="enter_second_number">Enter second number</string>
+    <string name="select_operation">Select Operation</string>
+    <string name="op_add">+</string>
+    <string name="op_subtract">−</string>
+    <string name="op_multiply">×</string>
+    <string name="op_divide">÷</string>
+    <string name="result_label">RESULT</string>
+    <string name="result_placeholder">—</string>
+    <string name="btn_clear">CLEAR</string>
+
+    <!-- Toast Messages -->
+    <string name="msg_enter_numbers">Please enter both numbers</string>
+    <string name="msg_divide_by_zero">Cannot divide by zero</string>
+    <string name="msg_invalid_input">Invalid input</string>
+    <string name="error_text">Error</string>
 </resources>
