@@ -21,4 +21,4 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
-}
+}// UI Enhancement: Onscreen keypad and landscape layout - Ambrose Kipkemoi
