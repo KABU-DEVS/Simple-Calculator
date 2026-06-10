@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- App Background -->
+    <color name="app_background">#F5F5F5</color>
+    <color name="app_surface">#FFFFFF</color>
+    <color name="app_card">#FFFFFF</color>
+
+    <!-- Primary Accent -->
+    <color name="accent_blue">#2979FF</color>
+    <color name="accent_blue_dark">#1A56CC</color>
+    <color name="accent_blue_light">#5C9EFF</color>
+
+    <!-- Operator Buttons -->
+    <color name="operator_bg">#E3F2FD</color>
+    <color name="operator_text">#2979FF</color>
+
+    <!-- Clear Button -->
+    <color name="clear_bg">#FFEBEE</color>
+    <color name="clear_text">#D32F2F</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+    <color name="text_result">#2979FF</color>
+
+    <!-- Input Fields -->
+    <color name="input_bg">#EEEEEE</color>
+    <color name="input_border">#E0E0E0</color>
+
+    <!-- Result Area -->
+    <color name="result_bg">#E3F2FD</color>
+
+    <!-- Status Bar -->
+    <color name="colorPrimaryDark">#E0E0E0</color>
+    <color name="colorPrimary">#2979FF</color>
+    <color name="colorAccent">#2979FF</color>
 </resources>
