@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- App Background -->
-    <color name="background_dark">#121212</color>
-    <color name="surface_dark">#1E1E1E</color>
-    <color name="card_dark">#2A2A2A</color>
+    <color name="app_background">#F5F5F5</color>
+    <color name="app_surface">#FFFFFF</color>
+    <color name="app_card">#FFFFFF</color>
 
     <!-- Primary Accent -->
     <color name="accent_blue">#2979FF</color>
@@ -12,29 +11,28 @@
     <color name="accent_blue_light">#5C9EFF</color>
 
     <!-- Operator Buttons -->
-    <color name="operator_bg">#1E3A5F</color>
-    <color name="operator_text">#5C9EFF</color>
+    <color name="operator_bg">#E3F2FD</color>
+    <color name="operator_text">#2979FF</color>
 
     <!-- Clear Button -->
-    <color name="clear_bg">#3D1A1A</color>
-    <color name="clear_text">#FF5252</color>
+    <color name="clear_bg">#FFEBEE</color>
+    <color name="clear_text">#D32F2F</color>
 
     <!-- Text Colors -->
-    <color name="text_primary">#FFFFFF</color>
-    <color name="text_secondary">#AAAAAA</color>
-    <color name="text_hint">#555555</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
     <color name="text_result">#2979FF</color>
 
     <!-- Input Fields -->
-    <color name="input_bg">#252525</color>
-    <color name="input_border">#333333</color>
+    <color name="input_bg">#EEEEEE</color>
+    <color name="input_border">#E0E0E0</color>
 
     <!-- Result Area -->
-    <color name="result_bg">#0D1F3C</color>
+    <color name="result_bg">#E3F2FD</color>
 
     <!-- Status Bar -->
-    <color name="colorPrimaryDark">#0A0A0A</color>
+    <color name="colorPrimaryDark">#E0E0E0</color>
     <color name="colorPrimary">#2979FF</color>
     <color name="colorAccent">#2979FF</color>
-
 </resources>

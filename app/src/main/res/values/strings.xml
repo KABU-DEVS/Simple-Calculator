@@ -19,4 +19,5 @@
     <string name="msg_divide_by_zero">Cannot divide by zero</string>
     <string name="msg_invalid_input">Invalid input</string>
     <string name="error_text">Error</string>
+    <string name="theme_toggle_desc">Toggle Theme</string>
 </resources>
