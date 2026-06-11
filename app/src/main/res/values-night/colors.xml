@@ -11,8 +11,8 @@
     <color name="accent_blue_light">#5C9EFF</color>
 
     <!-- Operator Buttons -->
-    <color name="operator_bg">#1E3A5F</color>
-    <color name="operator_text">#5C9EFF</color>
+    <color name="operator_bg">#2979FF</color>
+    <color name="operator_text">#FFFFFF</color>
 
     <!-- Clear Button -->
     <color name="clear_bg">#3D1A1A</color>

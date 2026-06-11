@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -212,18 +213,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void performCalculation(char operator) {
+        hideKeyboard();
         String input1 = etNumber1.getText().toString().trim();
         String input2 = etNumber2.getText().toString().trim();
 
         if (input1.isEmpty()) {
-            Toast.makeText(this, getString(R.string.msg_enter_numbers), Toast.LENGTH_SHORT).show();
+            handleError(R.string.msg_enter_numbers);
             return;
         }
 
         boolean needsInput2 = !(operator == 's' || operator == 'r');
 
         if (needsInput2 && input2.isEmpty()) {
-            Toast.makeText(this, getString(R.string.msg_enter_numbers), Toast.LENGTH_SHORT).show();
+            handleError(R.string.msg_enter_numbers);
             return;
         }
 
@@ -292,20 +294,31 @@ public class MainActivity extends AppCompatActivity {
             addToHistory(expression, resultStr);
 
         } catch (NumberFormatException e) {
-            Toast.makeText(this, getString(R.string.msg_invalid_input), Toast.LENGTH_SHORT).show();
+            handleError(R.string.msg_invalid_input);
         }
     }
 
     private void handleError(int stringResId) {
-        tvResult.setText(getString(R.string.error_text));
+        tvResult.setText(getString(stringResId));
         Toast.makeText(this, getString(stringResId), Toast.LENGTH_SHORT).show();
     }
 
     private void clearFields() {
+        hideKeyboard();
         etNumber1.setText("");
         etNumber2.setText("");
-        tvResult.setText(getString(R.string.result_placeholder));
+        tvResult.setText("");
         etNumber1.requestFocus();
+    }
+
+    private void hideKeyboard() {
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            if (imm != null) {
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
+        }
     }
 
     // --- History Helper Classes ---
