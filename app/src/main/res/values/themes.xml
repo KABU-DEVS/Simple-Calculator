@@ -6,4 +6,16 @@
     </style>
 
     <style name="Theme.SimpleCalculator" parent="Base.Theme.SimpleCalculator" />
+
+    <style name="OperationButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/operator_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/operator_button_background</item>
+        <item name="android:elevation">2dp</item>
+    </style>
 </resources>

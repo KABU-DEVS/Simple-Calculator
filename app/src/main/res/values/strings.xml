@@ -10,6 +10,11 @@
     <string name="op_subtract">−</string>
     <string name="op_multiply">×</string>
     <string name="op_divide">÷</string>
+    <string name="op_percent">%</string>
+    <string name="op_square">x²</string>
+    <string name="op_sqrt">√</string>
+    <string name="op_power">x^y</string>
+    <string name="op_mod">MOD</string>
     <string name="result_label">RESULT</string>
     <string name="result_placeholder">—</string>
     <string name="btn_clear">CLEAR</string>
@@ -20,4 +25,7 @@
     <string name="msg_invalid_input">Invalid input</string>
     <string name="error_text">Error</string>
     <string name="theme_toggle_desc">Toggle Theme</string>
+    <string name="btn_show_advanced">Show Advanced</string>
+    <string name="btn_hide_advanced">Hide Advanced</string>
+    <string name="rotate_desc">Toggle Orientation</string>
 </resources>
