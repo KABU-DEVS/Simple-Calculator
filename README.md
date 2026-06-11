@@ -5,6 +5,9 @@ A clean, professional, and intuitive Android calculator application designed for
 ## ✨ Features
 
 - **Core Arithmetic Operations**: Supports Addition, Subtraction, Multiplication, and Division.
+- **Advanced Math**: Includes Percentage, Square, Square Root, Power (x^y), and Modulo.
+- **Calculation History**: View past calculations with timestamps in a scrollable list.
+- **Clear History**: Reset your history log with a single tap.
 - **Smart Input Validation**: Prevents errors by ensuring valid numerical inputs and handling division by zero gracefully.
 - **State Preservation**: Remembers your results even when you rotate the screen or switch between apps.
 - **Clean UI/UX**: Features a card-based design with clear visual feedback for operators and results.

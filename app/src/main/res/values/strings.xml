@@ -19,6 +19,11 @@
     <string name="result_placeholder">—</string>
     <string name="btn_clear">CLEAR</string>
 
+    <string name="history_title">HISTORY</string>
+    <string name="btn_clear_history">Clear History</string>
+    <string name="no_history">No history yet</string>
+    <string name="msg_history_cleared">History cleared</string>
+
     <!-- Toast Messages -->
     <string name="msg_enter_numbers">Please enter both numbers</string>
     <string name="msg_divide_by_zero">Cannot divide by zero</string>

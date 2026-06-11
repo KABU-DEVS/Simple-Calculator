@@ -258,6 +258,58 @@
 
             </LinearLayout>
 
+            <View android:layout_width="match_parent" android:layout_height="24dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/history_title"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.1"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/btnClearHistory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:text="@string/btn_clear_history"
+                    android:textColor="@color/clear_text"
+                    android:textSize="10sp"
+                    android:textAllCaps="true"
+                    android:padding="0dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"/>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"/>
+
+            <TextView
+                android:id="@+id/tvEmptyHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_history"
+                android:textColor="@color/text_hint"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:padding="24dp"
+                android:visibility="gone"/>
+
             <View android:layout_width="match_parent" android:layout_height="16dp"/>
 
         </LinearLayout>
