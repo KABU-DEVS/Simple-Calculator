@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App Background -->
-    <color name="app_background">#F5F5F5</color>
+    <color name="app_background">#FFFFFF</color>
     <color name="app_surface">#FFFFFF</color>
     <color name="app_card">#FFFFFF</color>
 
@@ -11,8 +11,8 @@
     <color name="accent_blue_light">#5C9EFF</color>
 
     <!-- Operator Buttons -->
-    <color name="operator_bg">#E3F2FD</color>
-    <color name="operator_text">#2979FF</color>
+    <color name="operator_bg">#2979FF</color>
+    <color name="operator_text">#FFFFFF</color>
 
     <!-- Clear Button -->
     <color name="clear_bg">#FFEBEE</color>

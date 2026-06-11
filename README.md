@@ -1,81 +1,66 @@
-# Simple Calculator 📱
+# Simple Android Calculator Application 📱
 
-A clean, professional, and intuitive Android calculator application designed for everyday arithmetic. Built with Java and the Android SDK, this app focuses on simplicity, reliability, and a smooth user experience.
+A fully functional Android Calculator developed to perform basic arithmetic operations and advanced scientific functions. This project demonstrates proficiency in Android layouts (XML), Java logic, resource management, and collaborative software development as part of the Android Mobile Application Development Group Assignment.
 
-## ✨ Features
+## 🎯 Project Objectives
+- Design intuitive user interfaces using **XML**.
+- Implement core widgets: **EditText**, **TextView**, and **Button**.
+- Handle complex **Event Handling** and arithmetic logic in **Java**.
+- Efficiently organize resources using **strings.xml** and **colors.xml**.
+- Demonstrate high-quality **Error Handling** (e.g., Division by Zero).
 
-- **Core Arithmetic Operations**: Supports Addition, Subtraction, Multiplication, and Division.
-- **Advanced Math**: Includes Percentage, Square, Square Root, Power (x^y), and Modulo.
-- **Calculation History**: View past calculations with timestamps in a scrollable list.
-- **Clear History**: Reset your history log with a single tap.
-- **Smart Input Validation**: Prevents errors by ensuring valid numerical inputs and handling division by zero gracefully.
-- **State Preservation**: Remembers your results even when you rotate the screen or switch between apps.
-- **Clean UI/UX**: Features a card-based design with clear visual feedback for operators and results.
-- **Precision Handling**: Formats large and small results with up to 10 decimal places for clarity without clutter.
-- **One-Tap Clear**: Quickly reset your workspace with the dedicated clear button.
+## ✨ Functional Requirements
+This application meets all mandatory requirements and exceeds expectations with bonus features.
 
-## 🚀 Getting Started
+### 🛠️ Core Functionality (Mandatory)
+- **Dual Input**: Two `EditText` fields for high-precision numerical input.
+- **Basic Operations**: Dedicated buttons for Addition (`+`), Subtraction (`-`), Multiplication (`×`), and Division (`÷`).
+- **Result Display**: A prominent `TextView` that updates with each calculation result.
+- **Clear Function**: A specialized button to reset both `EditText` inputs and the result `TextView`.
+- **Error Handling**: Comprehensive logic to prevent crashes during "Division by Zero" or invalid input, displaying clear error messages.
 
-### Prerequisites
+### 🌟 Bonus Features (+5 Marks)
+- **Scientific Functions**: Includes Square Root (`√`), Percentage (`%`), Square (`x²`), Power (`x^y`), and Modulo (`MOD`).
+- **Dark Mode Support**: Manual and system-wide theme switching for enhanced accessibility.
+- **Custom App Icon**: A custom launcher icon that replaces the default Android symbol.
+- **Landscape Support**: Optimized layout using `ScrollView` and `LinearLayout` for seamless rotation.
+- **Calculator History**: A modern `RecyclerView` implementation to track past calculations with timestamps.
 
-- Android Studio Koala | 2024.1.1 or higher
-- Android SDK 34 (UpsideDownCake)
-- JDK 17
+## 👥 Team Roles & Responsibilities
 
-### Installation
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/KABU-DEVS/Simple-Calculator.git
-   ```
-
-2. **Open in Android Studio**
-   - Launch Android Studio and select **Open**.
-   - Navigate to the project folder and click **OK**.
-
-3. **Sync and Build**
-   - Wait for the Gradle sync to finish.
-   - Click the **Run** button (green play icon) to deploy the app to an emulator or physical device.
-
-## 👥 Contributors & Responsibilities
-
-| Member | Name | Responsibility |
+| Member | Role | Responsibilities |
 | :--- | :--- | :--- |
-| 1 | **JOSEPH NG'ANG'A** | Project Lead + GitHub Management + Integration |
-| 2 | **AMBROSE TANUI** | UI Design (`activity_main.xml`, colors) |
-| 3 | **TROXEL WONDERFUL** | Calculator Logic (`MainActivity.java`) |
-| 4 | **SAMMY KIBET** | Resources, Testing, Documentation, Screenshots, Report |
+| **JOSEPH NG'ANG'A** | **Project Lead** | Repository setup, GitHub management, and final code integration. |
+| **AMBROSE TANUI** | **UI Designer** | Designing `activity_main.xml`, custom drawables, and `colors.xml`. |
+| **TROXEL WONDERFUL** | **Logic Developer** | Implementing `MainActivity.java` and core calculation algorithms. |
+| **SAMMY KIBET** | **Resource & QA** | Managing `strings.xml`, app icons, testing, and final report documentation. |
 
-## 🛠️ Built With
+## 📂 Technical Implementation Details
 
-- **Java**: Primary programming language for logic and state management.
-- **XML**: Used for crafting a responsive and accessible user interface.
-- **Material Design**: For consistent and modern UI components.
-- **Gradle**: Build automation system.
+- **Language**: Java 11
+- **UI Components**: `LinearLayout` (Nested), `ScrollView`, `RecyclerView`.
+- **Resources**: Centralized `strings.xml` for all text and `colors.xml` for the theme palette.
+- **State Management**: `onSaveInstanceState` used to preserve results across configuration changes.
+- **Logic**: Robust implementation with `try-catch` blocks for `NumberFormatException` and specific division-by-zero checks.
 
-## 📂 Project Structure
+## 🚀 Usage Instructions
 
-```text
-app/src/main/
-├── java/com/example/simplecalculator/
-│   └── MainActivity.java       # Core application logic
-└── res/
-    ├── layout/
-    │   └── activity_main.xml  # UI design and layout
-    ├── values/
-    │   ├── colors.xml         # Brand and UI color palette
-    │   └── strings.xml        # Localized string resources
-    └── drawable/              # Custom backgrounds and assets
-```
+1. **Clone**: `git clone https://github.com/KABU-DEVS/Simple-Calculator.git`
+2. **Open**: Open the project in **Android Studio Koala** or higher.
+3. **Run**: Select an emulator/device and click **Run**.
+4. **Calculate**: Enter numbers, select an operation, and view your result. Use **CLEAR** to start over.
 
-## 📝 Usage
+## 📝 Testing Summary
 
-1. Enter your **First Number**.
-2. Enter your **Second Number**.
-3. Tap one of the operator buttons (`+`, `−`, `×`, `÷`) to see the result immediately.
-4. Use the **CLEAR** button to wipe all inputs and start a new calculation.
+| Test Case | Input 1 | Input 2 | Operation | Expected Result | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Addition | 10 | 5 | `+` | 15 | ✅ Pass |
+| Subtraction | 10 | 5 | `-` | 5 | ✅ Pass |
+| Multiplication| 10 | 5 | `×` | 50 | ✅ Pass |
+| Division | 10 | 5 | `÷` | 2 | ✅ Pass |
+| Div by Zero | 10 | 0 | `÷` | Cannot divide by zero| ✅ Pass |
+| Invalid Input | [empty] | 5 | `+` | Please enter both numbers| ✅ Pass |
 
-## 🤝 Contributing
-
-Contributions are welcome! If you find a bug or have a feature request, please open an issue or submit a pull request.
-
+---
+**Project Status:** ✅ Final Submission | **Course:** Android Mobile Application Development
+*Developed with precision and collaborative effort by **KABU-DEVS**.*
