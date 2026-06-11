@@ -1,351 +1,327 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<!--
+    ============================================================
+    FILE: res/layout/activity_main.xml  (PORTRAIT)
+    ROLE: UI Designer
+    DESC: Main calculator layout — input cards, result display,
+          operation buttons, and on-screen numpad.
+          Logic Developer: wire all button IDs in MainActivity.
+    ============================================================
+-->
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_background">
+    android:orientation="vertical"
+    android:background="@color/bg_dark"
+    android:padding="14dp">
 
-    <ScrollView
+    <!-- TOP ROW: First Number Card + Result Card -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="0dp"
+        android:layout_weight="1.4"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
 
+        <!-- First Number Input Card -->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="vertical"
-            android:padding="24dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:paddingTop="8dp"
-                android:paddingBottom="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/calculator_title"
-                    android:textColor="@color/text_primary"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:letterSpacing="0.3"/>
-
-                <View
-                    android:layout_width="32dp"
-                    android:layout_height="3dp"
-                    android:layout_marginTop="4dp"
-                    android:background="@color/accent_blue"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/card_background"
-                android:padding="16dp"
-                android:elevation="4dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/first_number"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="11sp"
-                    android:letterSpacing="0.1"
-                    android:layout_marginBottom="4dp"/>
-
-                <EditText
-                    android:id="@+id/etNumber1"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:background="@drawable/input_background"
-                    android:hint="@string/enter_first_number"
-                    android:textColor="@color/text_primary"
-                    android:textColorHint="@color/text_hint"
-                    android:textSize="16sp"
-                    android:inputType="numberDecimal|numberSigned"
-                    android:imeOptions="actionNext"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:gravity="center_vertical"
-                    android:textCursorDrawable="@null"
-                    android:autofillHints="none" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="8dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/second_number"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="11sp"
-                    android:letterSpacing="0.1"
-                    android:layout_marginBottom="4dp"/>
-
-                <EditText
-                    android:id="@+id/etNumber2"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:background="@drawable/input_background"
-                    android:hint="@string/enter_second_number"
-                    android:textColor="@color/text_primary"
-                    android:textColorHint="@color/text_hint"
-                    android:textSize="16sp"
-                    android:inputType="numberDecimal|numberSigned"
-                    android:imeOptions="actionDone"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:gravity="center_vertical"
-                    android:textCursorDrawable="@null"
-                    android:autofillHints="none" />
-
-            </LinearLayout>
-
-            <View android:layout_width="match_parent" android:layout_height="12dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/select_operation"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="11sp"
-                    android:letterSpacing="0.1"/>
-
-                <Button
-                    android:id="@+id/btnToggleAdvanced"
-                    android:layout_width="wrap_content"
-                    android:layout_height="32dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:text="@string/btn_show_advanced"
-                    android:textColor="@color/accent_blue"
-                    android:textSize="10sp"
-                    android:textAllCaps="true"
-                    android:padding="0dp"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"/>
-
-            </LinearLayout>
-
-            <!-- Row 1: Basic Operations -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="4dp">
-
-                <Button
-                    android:id="@+id/btnAdd"
-                    style="@style/OperationButton"
-                    android:text="@string/op_add" />
-
-                <Button
-                    android:id="@+id/btnSubtract"
-                    style="@style/OperationButton"
-                    android:text="@string/op_subtract" />
-
-                <Button
-                    android:id="@+id/btnMultiply"
-                    style="@style/OperationButton"
-                    android:text="@string/op_multiply" />
-
-                <Button
-                    android:id="@+id/btnDivide"
-                    style="@style/OperationButton"
-                    android:text="@string/op_divide" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/layoutAdvanced"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone">
-
-                <!-- Row 2: Advanced Operations -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
-
-                    <Button
-                        android:id="@+id/btnPercent"
-                        style="@style/OperationButton"
-                        android:text="@string/op_percent" />
-
-                    <Button
-                        android:id="@+id/btnSquare"
-                        style="@style/OperationButton"
-                        android:text="@string/op_square" />
-
-                    <Button
-                        android:id="@+id/btnSqrt"
-                        style="@style/OperationButton"
-                        android:text="@string/op_sqrt" />
-
-                    <Button
-                        android:id="@+id/btnPower"
-                        style="@style/OperationButton"
-                        android:text="@string/op_power"
-                        android:textSize="16sp" />
-
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/btnMod"
-                    style="@style/OperationButton"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/op_mod"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/btnClear"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/btn_clear"
-                android:textSize="12sp"
-                android:textColor="@color/clear_text"
-                android:textStyle="bold"
-                android:letterSpacing="0.15"
-                android:background="@drawable/clear_button_background"
-                android:elevation="2dp"/>
-
-            <View android:layout_width="match_parent" android:layout_height="12dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/result_background"
-                android:padding="16dp"
-                android:gravity="center"
-                android:elevation="4dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/result_label"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="10sp"
-                    android:letterSpacing="0.2"
-                    android:layout_marginBottom="4dp"/>
-
-                <TextView
-                    android:id="@+id/tvResult"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/result_placeholder"
-                    android:textColor="@color/text_result"
-                    android:textSize="28sp"
-                    android:textStyle="bold"
-                    android:gravity="center"/>
-
-            </LinearLayout>
-
-            <View android:layout_width="match_parent" android:layout_height="24dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/history_title"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="11sp"
-                    android:letterSpacing="0.1"
-                    android:textStyle="bold"/>
-
-                <Button
-                    android:id="@+id/btnClearHistory"
-                    android:layout_width="wrap_content"
-                    android:layout_height="32dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:text="@string/btn_clear_history"
-                    android:textColor="@color/clear_text"
-                    android:textSize="10sp"
-                    android:textAllCaps="true"
-                    android:padding="0dp"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"/>
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvHistory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                android:overScrollMode="never"/>
+            android:background="@drawable/bg_card_input"
+            android:padding="12dp"
+            android:layout_marginEnd="8dp">
 
             <TextView
-                android:id="@+id/tvEmptyHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="# FIRST NUMBER"
+                android:textColor="@color/accent_blue"
+                android:textSize="9sp"
+                android:letterSpacing="0.12"
+                android:textAllCaps="true"
+                android:layout_marginBottom="6dp"/>
+
+            <EditText
+                android:id="@+id/editTextFirstNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/no_history"
-                android:textColor="@color/text_hint"
-                android:textSize="12sp"
-                android:gravity="center"
-                android:padding="24dp"
-                android:visibility="gone"/>
-
-            <View android:layout_width="match_parent" android:layout_height="16dp"/>
-
+                android:hint="0"
+                android:hintTextColor="@color/text_hint"
+                android:textColor="@color/text_primary"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"
+                android:inputType="numberDecimal|numberSigned"
+                android:maxLines="1"
+                android:showSoftInputOnFocus="false"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:cursorVisible="true"/>
         </LinearLayout>
-    </ScrollView>
 
+        <!-- Current Result Display Card -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_result"
+            android:padding="12dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CURRENT RESULT"
+                android:textColor="@color/text_hint"
+                android:textSize="9sp"
+                android:letterSpacing="0.12"
+                android:textAllCaps="true"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/textViewResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/text_primary"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="end"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- SECOND NUMBER INPUT CARD -->
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/bg_card_input"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp">
 
-        <ImageButton
-            android:id="@+id/btnRotate"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/rotate_desc"
-            android:src="@drawable/ic_landscape"
-            android:padding="10dp"
-            android:scaleType="centerInside"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="# SECOND NUMBER"
+            android:textColor="@color/accent_red"
+            android:textSize="9sp"
+            android:letterSpacing="0.12"
+            android:textAllCaps="true"
+            android:layout_marginBottom="6dp"/>
 
-        <ImageButton
-            android:id="@+id/btnThemeToggle"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/theme_toggle_desc"
-            android:src="@drawable/ic_theme_light"
-            android:padding="10dp"
-            android:scaleType="centerInside"/>
+        <EditText
+            android:id="@+id/editTextSecondNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:hintTextColor="@color/text_hint"
+            android:textColor="@color/text_primary"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:background="@android:color/transparent"
+            android:inputType="numberDecimal|numberSigned"
+            android:maxLines="1"
+            android:showSoftInputOnFocus="false"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:cursorVisible="true"/>
+    </LinearLayout>
+
+    <!-- CALCULATE + CLEAR ROW -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:id="@+id/buttonCalculate"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Calculate Total"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_btn_calculate"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/buttonClear"
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:text="&#128465;"
+            android:textSize="18sp"
+            android:background="@drawable/bg_btn_clear"/>
+    </LinearLayout>
+
+    <!-- FOUR ARITHMETIC OPERATION BUTTONS -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.8"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:id="@+id/buttonAdd"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="+"
+            android:textColor="@color/text_secondary"
+            android:textSize="26sp"
+            android:background="@drawable/bg_btn_operator"
+            android:layout_margin="4dp"/>
+
+        <Button
+            android:id="@+id/buttonSubtract"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="&#8722;"
+            android:textColor="@color/text_secondary"
+            android:textSize="26sp"
+            android:background="@drawable/bg_btn_operator"
+            android:layout_margin="4dp"/>
+
+        <Button
+            android:id="@+id/buttonMultiply"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="&#215;"
+            android:textColor="@color/text_secondary"
+            android:textSize="26sp"
+            android:background="@drawable/bg_btn_operator"
+            android:layout_margin="4dp"/>
+
+        <Button
+            android:id="@+id/buttonDivide"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="&#247;"
+            android:textColor="@color/text_secondary"
+            android:textSize="26sp"
+            android:background="@drawable/bg_btn_operator"
+            android:layout_margin="4dp"/>
+    </GridLayout>
+
+    <!--
+        ═══════════════════════════════════════════════
+        ON-SCREEN NUMPAD
+        Logic Developer note:
+          - btn_0 to btn_9 → append digit to focused EditText
+          - btn_dot        → append "." if not already present
+          - btn_back       → delete last character from focused EditText
+          - btn_pad_add / btn_pad_subtract /
+            btn_pad_multiply / btn_pad_divide → same as top buttons
+        ═══════════════════════════════════════════════
+    -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:background="@drawable/bg_numpad"
+        android:padding="6dp">
+
+        <!-- Row 1 : 7  8  9  ÷ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp">
+            <Button android:id="@+id/btn_7"
+                style="@style/NumpadDigit"
+                android:text="7" android:layout_marginEnd="5dp"/>
+            <Button android:id="@+id/btn_8"
+                style="@style/NumpadDigit"
+                android:text="8" android:layout_marginEnd="5dp"/>
+            <Button android:id="@+id/btn_9"
+                style="@style/NumpadDigit"
+                android:text="9" android:layout_marginEnd="5dp"/>
+            <Button android:id="@+id/btn_pad_divide"
+                style="@style/NumpadOperator"
+                android:text="&#247;"/>
+        </LinearLayout>
+
+        <!-- Row 2 : 4  5  6  × -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp">
+            <Button android:id="@+id/btn_4"
+                style="@style/NumpadDigit"
+                android:text="4" android:layout_marginEnd="5dp"/>
+            <Button android:id="@+id/btn_5"
+                style="@style/NumpadDigit"
+                android:text="5" android:layout_marginEnd="5dp"/>
+            <Button android:id="@+id/btn_6"
+                style="@style/NumpadDigit"
+                android:text="6" android:layout_marginEnd="5dp"/>
+            <Button android:id="@+id/btn_pad_multiply"
+                style="@style/NumpadOperator"
+                android:text="&#215;"/>
+        </LinearLayout>
+
+        <!-- Row 3 : 1  2  3  − -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp">
+            <Button android:id="@+id/btn_1"
+                style="@style/NumpadDigit"
+                android:text="1" android:layout_marginEnd="5dp"/>
+            <Button android:id="@+id/btn_2"
+                style="@style/NumpadDigit"
+                android:text="2" android:layout_marginEnd="5dp"/>
+            <Button android:id="@+id/btn_3"
+                style="@style/NumpadDigit"
+                android:text="3" android:layout_marginEnd="5dp"/>
+            <Button android:id="@+id/btn_pad_subtract"
+                style="@style/NumpadOperator"
+                android:text="&#8722;"/>
+        </LinearLayout>
+
+        <!-- Row 4 : 0  .  ⌫  + -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <Button android:id="@+id/btn_0"
+                style="@style/NumpadDigit"
+                android:text="0" android:layout_marginEnd="5dp"/>
+            <Button android:id="@+id/btn_dot"
+                style="@style/NumpadDigit"
+                android:text="." android:layout_marginEnd="5dp"/>
+            <Button android:id="@+id/btn_back"
+                style="@style/NumpadDigit"
+                android:text="&#9003;" android:layout_marginEnd="5dp"/>
+            <Button android:id="@+id/btn_pad_add"
+                style="@style/NumpadOperator"
+                android:text="+"/>
+        </LinearLayout>
 
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

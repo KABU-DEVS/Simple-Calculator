@@ -1,38 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    ============================================================
+    FILE: res/values/colors.xml
+    ROLE: UI Designer
+    DESC: Full dark-mode color palette matching the app design.
+          Deep navy/dark bg, blue accent cards, pink CTA button.
+    ============================================================
+-->
 <resources>
-    <!-- App Background -->
-    <color name="app_background">#FFFFFF</color>
-    <color name="app_surface">#FFFFFF</color>
-    <color name="app_card">#FFFFFF</color>
 
-    <!-- Primary Accent -->
-    <color name="accent_blue">#2979FF</color>
-    <color name="accent_blue_dark">#1A56CC</color>
-    <color name="accent_blue_light">#5C9EFF</color>
+    <!-- ── Backgrounds ── -->
+    <color name="bg_dark">#0D0D1A</color>
+    <color name="bg_card_input">#1A1A2E</color>
+    <color name="bg_card_result">#12133A</color>
+    <color name="bg_numpad">#111120</color>
+    <color name="bg_btn_operator">#1E1E35</color>
+    <color name="bg_btn_numpad_digit">#1C1C30</color>
+    <color name="bg_btn_numpad_op">#161630</color>
 
-    <!-- Operator Buttons -->
-    <color name="operator_bg">#2979FF</color>
-    <color name="operator_text">#FFFFFF</color>
+    <!-- ── Text ── -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0D0</color>
+    <color name="text_hint">#555580</color>
+    <color name="white">#FFFFFF</color>
 
-    <!-- Clear Button -->
-    <color name="clear_bg">#FFEBEE</color>
-    <color name="clear_text">#D32F2F</color>
+    <!-- ── Accents ── -->
+    <color name="accent_blue">#5B8DEF</color>
+    <color name="accent_red">#EF5B7A</color>
+    <color name="accent_pink">#E8427C</color>
+    <color name="accent_pink_dark">#C2336A</color>
 
-    <!-- Text Colors -->
-    <color name="text_primary">#212121</color>
-    <color name="text_secondary">#757575</color>
-    <color name="text_hint">#BDBDBD</color>
-    <color name="text_result">#2979FF</color>
+    <!-- ── Button states ── -->
+    <color name="btn_calculate_start">#E8427C</color>
+    <color name="btn_calculate_end">#9B3DD8</color>
+    <color name="btn_clear_bg">#3A1525</color>
+    <color name="btn_operator_pressed">#2A2A50</color>
+    <color name="btn_numpad_pressed">#252540</color>
 
-    <!-- Input Fields -->
-    <color name="input_bg">#EEEEEE</color>
-    <color name="input_border">#E0E0E0</color>
+    <!-- ── System bar (used in styles/themes) ── -->
+    <color name="colorPrimary">#0D0D1A</color>
+    <color name="colorPrimaryDark">#0D0D1A</color>
+    <color name="colorAccent">#E8427C</color>
 
-    <!-- Result Area -->
-    <color name="result_bg">#E3F2FD</color>
-
-    <!-- Status Bar -->
-    <color name="colorPrimaryDark">#E0E0E0</color>
-    <color name="colorPrimary">#2979FF</color>
-    <color name="colorAccent">#2979FF</color>
 </resources>
