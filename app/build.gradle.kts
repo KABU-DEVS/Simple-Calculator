@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.simplecalculator"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.simplecalculator"
